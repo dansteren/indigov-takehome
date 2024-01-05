@@ -32,17 +32,17 @@ can use any sort of data store to “persist” the constituents (database, csv 
 
 ## What we are looking for
 
-● A back-end solution: a solid functional service that can receive REST calls
-● Instructions on how to run the app
-● Be prepared to describe your thought process and tradeoffs you made
-● It’s okay to stub or mock out pieces you don’t have time to get to
-● It’s encouraged to bring in libraries you are comfortable with
-● If you have extra time, feel free to add additional features that you find interesting
+- A back-end solution: a solid functional service that can receive REST calls
+- Instructions on how to run the app
+- Be prepared to describe your thought process and tradeoffs you made
+- It’s okay to stub or mock out pieces you don’t have time to get to
+- It’s encouraged to bring in libraries you are comfortable with
+- If you have extra time, feel free to add additional features that you find interesting
 
 ## Extra points (totally not necessary)
 
-● Making a frontend that looks snazzy
-● Add search, sort, and/or filter functionality to the list of constituents in the system
-● Add the ability to upload CSVs of contact data to the system
-● Thorough validation of incoming data
-● Authentication and other security features
+- Making a frontend that looks snazzy
+- Add search, sort, and/or filter functionality to the list of constituents in the system
+- Add the ability to upload CSVs of contact data to the system
+- Thorough validation of incoming data
+- Authentication and other security features
