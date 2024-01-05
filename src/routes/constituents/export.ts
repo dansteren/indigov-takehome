@@ -3,18 +3,20 @@ import { Parser } from "json2csv";
 import { Constituent } from "../../db/constituent";
 
 export function exportConstituents(req: Request, res: Response) {
-  const allConstituents = Constituent.find().map((constituent) => {
-    return {
-      email: constituent.email,
-      firstName: constituent.firstName,
-      middleName: constituent.middleName,
-      lastName: constituent.lastName,
-      street: constituent.address?.street,
-      city: constituent.address?.city,
-      state: constituent.address?.state,
-      zip: constituent.address?.zip,
-    };
-  });
+  const allConstituents = Constituent.find()
+    .sort(createdAtAsc)
+    .map((constituent) => {
+      return {
+        email: constituent.email,
+        firstName: constituent.firstName,
+        middleName: constituent.middleName,
+        lastName: constituent.lastName,
+        street: constituent.address?.street,
+        city: constituent.address?.city,
+        state: constituent.address?.state,
+        zip: constituent.address?.zip,
+      };
+    });
   const csv = new Parser().parse(allConstituents);
 
   res.setHeader("Content-Type", "text/csv");
@@ -23,4 +25,8 @@ export function exportConstituents(req: Request, res: Response) {
     'attachment; filename="constituents.csv"'
   );
   res.send(csv);
+}
+
+function createdAtAsc(a: Constituent, b: Constituent) {
+  return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
 }

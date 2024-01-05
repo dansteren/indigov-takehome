@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { Address } from "./address";
 
-type RecordConstructor = {
+type ConstituentConstructor = {
   id?: string;
   uuid?: string;
   createdAt?: string;
@@ -10,6 +10,7 @@ type RecordConstructor = {
   firstName: string;
   middleName?: string;
   lastName: string;
+  address?: Address;
 };
 
 export class Constituent {
@@ -34,13 +35,14 @@ export class Constituent {
   ];
 
   static find() {
-    return this.records.map((record) => {
-      const address = Address.findOneByConstituentId(record.id);
-      return {
-        ...record,
-        address,
-      };
+    const results = this.records.map((constituent) => {
+      const address = Address.findOneByConstituentId(constituent.id);
+      constituent.address = address;
+
+      return constituent;
     });
+
+    return results;
   }
 
   static findOneByEmail(email: string) {
@@ -55,8 +57,9 @@ export class Constituent {
   firstName: string;
   middleName?: string;
   lastName: string;
+  address?: Address;
 
-  constructor(data: RecordConstructor) {
+  constructor(data: ConstituentConstructor) {
     this.id = data.id ?? Constituent.nextId();
     this.uuid = data.uuid ?? uuid();
     this.createdAt = data.createdAt ?? new Date().toISOString();
@@ -65,10 +68,10 @@ export class Constituent {
     this.firstName = data.firstName;
     this.middleName = data.middleName;
     this.lastName = data.lastName;
+    this.address = data.address;
   }
 
   save() {
     Constituent.records.push(this);
-    console.log("Constituent saved to list...");
   }
 }
