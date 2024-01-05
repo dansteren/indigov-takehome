@@ -1,4 +1,4 @@
-# Indigov Take Home - Senior Software Engineer
+# Indigov Take Home - Senior Engineer
 
 ## Running the App
 
@@ -23,9 +23,15 @@ curl  -X POST \
   'localhost:3000/constituents' \
   --header 'Content-Type: application/json' \
   --data-raw '{
-  "email": "constituent@example.com",
-  "firstName": "Concerned",
-  "lastName": "Constituent"
+  "email": "patrick@sherman.dental",
+  "firstName": "Patrick",
+  "lastName": "Sherman",
+  "address": {
+    "street": "42 Wallaby Way",
+    "city": "Sydney",
+    "state": "NY",
+    "zip": "84010"
+  }
 }'
 ```
 

@@ -68,5 +68,6 @@ export class Address {
 
   save() {
     Address.records.push(this);
+    return this;
   }
 }

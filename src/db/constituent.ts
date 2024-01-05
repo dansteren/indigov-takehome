@@ -73,5 +73,6 @@ export class Constituent {
 
   save() {
     Constituent.records.push(this);
+    return this;
   }
 }

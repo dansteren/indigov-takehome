@@ -11,7 +11,7 @@
 - [x] Figure out dedupe strategy. Gut says to reject call and tell them they're already in the system. If we don't want that UX then just merge. Which name/address info do we keep? Is this a security vulnerability to just replace info with new stuff? - Don't modify record if it exists
 - [x] Add /constituents/export - exports DB as a csv. Start with filter built in but move to query params.
 - [x] Update README with instructions on how to run server.
-- [ ] Support adding addresses in POST /constituents
+- [x] Support adding addresses in POST /constituents
 
 ## Extra Credit
 
@@ -34,6 +34,7 @@
 - [ ] Add pagination to /constituents endpoint. There could be a lot here
 - [ ] Add filter/sort query params to /constituents endpoint. Get those from a certain districts for example.
 - [ ] Send welcome/confirmation email?
+- [ ] Add API documentation using something like https://swagger.io/specification/
 
 ## Analytics
 
