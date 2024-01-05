@@ -6,7 +6,7 @@ export class Address {
       createdAt: "2024-01-04T15:50:30.000Z",
       updatedAt: "2024-01-04T15:50:30.000Z",
       constituentId: "00000001",
-      street1: "42 Wallaby Way",
+      street: "42 Wallaby Way",
       city: "Syndney",
       state: "NY",
       zip: "84010",
