@@ -1,4 +1,39 @@
-# Indigov Take Home - Platform Engineer
+# Indigov Take Home - Senior Software Engineer
+
+## Running the App
+
+1. Clone the repo: `git clone https://github.com/dansteren/indigov-takehome`
+2. Install dependencies: `npm install`
+3. Start the dev server: `npm start`
+
+## Testing the App
+
+With the dev server running:
+
+List all constituents in the system by executing the following curl command:
+
+```shell
+curl -X GET 'localhost:3000/constituents'
+```
+
+Create a new constituent record by executing the following curl command:
+
+```shell
+curl  -X POST \
+  'localhost:3000/constituents' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+  "email": "constituent@example.com",
+  "firstName": "Concerned",
+  "lastName": "Constituent"
+}'
+```
+
+Download a csv of all constituent contact data
+
+```shell
+curl -X GET 'localhost:3000/constituents/export' -o constituents.csv
+```
 
 ## Problem
 
