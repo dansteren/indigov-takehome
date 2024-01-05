@@ -20,6 +20,7 @@
 ### DB Modeling
 
 - [ ] Improve Address field. Add second street address, support territories, foreign addresses, zip+4 codes, greeting, etc.
+- [ ] Consider being "smart" about emails. Google allows "me+anything@gmail.com". Consider stripping that on known users.
 
 ## Improved User Experience
 
