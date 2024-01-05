@@ -11,6 +11,7 @@
 - [x] Figure out dedupe strategy. Gut says to reject call and tell them they're already in the system. If we don't want that UX then just merge. Which name/address info do we keep? Is this a security vulnerability to just replace info with new stuff? - Don't modify record if it exists
 - [x] Add /constituents/export - exports DB as a csv. Start with filter built in but move to query params.
 - [x] Update README with instructions on how to run server.
+- [ ] Support adding addresses in POST /constituents
 
 ## Extra Credit
 
@@ -21,6 +22,7 @@
 ### DB Modeling
 
 - [ ] Improve Address field. Add second street address, support territories, foreign addresses, zip+4 codes, greeting, etc.
+- [ ] Consider adding in type-orm. Use in-memory sqlite DB: https://gist.github.com/Ciantic/be6a8b8ca27ee15e2223f642b5e01549
 
 ### Data Integrity
 
