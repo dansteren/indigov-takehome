@@ -16,7 +16,7 @@ export class Constituent {
 
   static find() {
     return this.records.map((record) => {
-      const address = Address.find()[0];
+      const address = Address.findOneByConstituentId(record.id);
       return {
         ...record,
         address,

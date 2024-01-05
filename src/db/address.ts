@@ -16,4 +16,10 @@ export class Address {
   static find() {
     return this.records;
   }
+
+  static findOneByConstituentId(constituentId: string) {
+    return this.records.find(
+      (record) => record.constituentId === constituentId
+    );
+  }
 }
